@@ -1,5 +1,7 @@
 Intuji assignment
 
+run composer update command first to install required packages
+
 Host site at : http://localhost:8888
     You can use command ` php -S localhost:8888 `
     and access the url
