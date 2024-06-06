@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import { ListEvents } from "./components/ListEvents";
 
 function App() {
   return (<ListEvents/>);

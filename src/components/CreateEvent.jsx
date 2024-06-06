@@ -1,37 +1,22 @@
 import React from 'react';
-import { Button, Form, Input } from 'antd';
-export const CreateEvent = ({ onFinish }) => (
+import { Button, DatePicker, Form, Input, Space } from 'antd';
+export const CreateEvent = ({ onFinish, onCancel }) => (
     <Form
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
         autoComplete="off"
     >
         <Form.Item
-            label="start"
-            name="start"
+            label="Start / End"
+            name="date"
             rules={[
                 {
                     required: true,
-                    message: 'Please select start date!',
+                    message: 'Please select start / end date!',
                 },
             ]}
         >
-            <Input />
+            <DatePicker.RangePicker showTime />
         </Form.Item>
-
-        <Form.Item
-            label="End date"
-            name="end"
-            rules={[
-                {
-                    required: true,
-                    message: 'Please select end date!',
-                },
-            ]}
-        >
-            <Input />
-        </Form.Item>
-
         <Form.Item
             label="Summary"
             name="summary"
@@ -52,16 +37,13 @@ export const CreateEvent = ({ onFinish }) => (
             <Input.TextArea />
         </Form.Item>
 
-        <Form.Item
-            wrapperCol={{
-                offset: 8,
-                span: 16,
-            }}
-        >
+        <Space direction='horizontal' align='start'>
             <Button type="primary" htmlType="submit">
                 Submit
             </Button>
-        </Form.Item>
+            <Button danger onClick={onCancel}>
+                Cancel
+            </Button>
+        </Space>
     </Form>
 );
-export default App;
